@@ -3,8 +3,9 @@ const {spawn} = require('child_process');
 const path = require('path');
 const cors = require('cors');
 const app = express();
-const port = 80;
-
+const port = 3000;
+const controller = new AbortController();
+const {signal} = controller;
 app.use(cors());
 
 // Serve public folder as homepage
@@ -58,6 +59,12 @@ app.get('/pythondispense', (req, res) => {
       });
 });
 
+// Get Request to *hopefully* abort the currently running child process
+app.get('/abort', (req, res) => {
+
+      controller.abort();
+      res.send("Child Process Terminated");
+});
 
 app.listen(port, () => console.log(`Example app listening on port 
 ${port}!`))
