@@ -20,8 +20,8 @@ html {
 }
 body {
     font-family: stem, sans-serif;
-	color: #ee6369; 
-    background-color: #94c7d8;
+	color: #F45B69; 
+    background-color: #BFD7EA;
 }
 .page-wrapper {
     padding:20px;
@@ -40,7 +40,7 @@ h1 {
 h2 {
     font-family: stem-bold;
     size: 45pt; 
-    color: #0caba4;
+    color: #114B5F;
 }
 #curr-plate-header {
     text-align: center;
@@ -97,12 +97,12 @@ button {
     
     display: inline-block;
     font-family: stem, sans-serif;
-    background-color:rgb(87,158,210, 0.85);
-    color: rgba(240, 77, 86, 0.95);
+    background-color:#667b92;
+    color: White;
     text-align: center;
 
     border-radius: 5px;
-    border-color: #ee6369;
+    border-color: black;
     border-style: double;
 
     padding: 14px 16px;
@@ -150,8 +150,8 @@ button {
     background: white;
     border:2px solid black;
     border-radius:50%;
-    height:18%;
-    width:18%;
+    height:20%;
+    width:20%;
     float:left;
     margin:0;
     padding:0;
