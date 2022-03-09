@@ -2,9 +2,35 @@
 var sizeSelection = document.getElementById('size-selection');
 var angleSelection = document.getElementById('angle-selection');
 var plateImg = document.getElementById('current-well-plate');
+var cellGrid = document.getElementById('cell-grid');
 
 // Circle Grid
 $('.circle').height($('.circle').width());
+// Creates the grid of well plate cells based on selection given
+function createWellPlate(rows, cols) {
+    // Clear previous grid
+    cellGrid.innerHTML = "";
+    
+    // String of html that creates our well plate
+    var well_plate_html = '';
+    for (let i = 0; i < rows; i++) {
+        well_plate_html += '<div class="cell-row">';
+        for (let j = 0; j < cols; j++) {
+            // Create unique Id consisting of row and column number
+            let id = "R" + i + "C" + j;
+            let cellhtml = '<div class="circle" onClick="selectCell(this.id)" id="' + id + '"></div>';
+            well_plate_html +=  cellhtml;
+        }
+        // Finish row tag
+        well_plate_html += '</div>';
+    }
+    console.log(well_plate_html);
+    // Insert html into cell grid element
+    cellGrid.innerHTML = well_plate_html;
+    //TODO MAnually Set height
+    // Circle Grid 
+    $('.circle').height($('.circle').width());  
+}
 
 // On update to size selection update image of well plate
 sizeSelection.addEventListener('change', (event) => {
@@ -34,6 +60,18 @@ exchangeButton.addEventListener('click', function(e) {
 
   if (size != "Select Well Plate Size" && angle != "Select Well Plate Angle") {
     // TODO MAKE GET REQUEST TO NODEJS SERVER TO CALL MATCHING PYTHON SCRIPT TO WELL PLATE SELECTION FOR MEDIA EXHANGE
+
+    // Generate Well Plate Image based on input
+    if (size == "6") {
+        createWellPlate(3, 2);
+    }
+    else if (size == "12") {
+        createWellPlate(3, 4);
+    }
+    else if (size == "24") {
+        createWellPlate(4, 6);
+    }
+
 
     // Clear Error Text
     $("#error-text").hide();
@@ -119,7 +157,7 @@ function toggleElements() {
         })
         .catch (err => {
         // Display Error message if no data is returned from search
-            console.log("Uh oh");
+            console.log("Error Running python script");
         });
 
     });
@@ -128,7 +166,6 @@ function toggleElements() {
     
     dispenseButton.addEventListener('click', function(e) {
         // Using fetch to get data
-        //https://cors-anywhere.herokuapp.com/
         pythonurl = 'http://10.144.13.13:3000/pythondispense'
         
         fetch(pythonurl)
@@ -140,7 +177,7 @@ function toggleElements() {
         })
         .catch (err => {
         // Display Error message if no data is returned from search
-            console.log("Uh oh");
+            console.log("Error running python script");
         });
 
 
