@@ -57,6 +57,7 @@ header {
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+    height: fit-content;
 }
 .row {
     display: flex;
@@ -138,10 +139,10 @@ button {
 }
 
 /* Well Plate Animation */
-#cell-grid {
+.cell-grid {
     height: 1000;
     width: 1000;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding: 5px;
     overflow: hidden;
 }
