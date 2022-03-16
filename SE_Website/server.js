@@ -10,8 +10,7 @@ const {signal} = controller;
 app.use(cors());
 
 // Serve public folder as homepage
-app.use(express.static("public"));
-
+app.use(express.static("/home/pi/ServantBetaCode/SE_Website/public"));
 
 // app.get('/', (req, res) => {
  
