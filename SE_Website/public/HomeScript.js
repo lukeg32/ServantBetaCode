@@ -11,8 +11,24 @@ var wellPlateGrid;
 // Creates the grid of well plate cells based on size given
 // rows = num rows in well plate, cols = number of columns in well plate
 function createWellPlate(rows, cols) {
+    // Change Size of wells and margins depending on number of wells by adding appropriate classes
+    var circleClass;
+    if (rows == 2) {
+        // 6 Wells
+       circleClass = "circle-six-well";
+       $('#static-cell-grid').addClass('static-six-well');
+   } else if (rows == 3) {
+       // 12 Wells
+       circleClass = "circle-twelve-well";
+       $('#static-cell-grid').addClass('static-twelve-well');
+   } else {
+       // 24 Wells and Above
+       circleClass = "circle-twentyfour-well";
+       $('#static-cell-grid').addClass('static-twentyfour-well');
+   }
+
     // Clear previous grid
-    var cellGrid = document.getElementById('cell-grid');
+    var cellGrid = document.getElementById('static-cell-grid');
     cellGrid.innerHTML = "";
 
     // String of html that creates our well plate
@@ -22,7 +38,7 @@ function createWellPlate(rows, cols) {
         for (let j = 0; j < cols; j++) {
             // Create unique Id consisting of row and column number
             let id = "R" + i + "C" + j;
-            let cellhtml = '<div class="circle" id="' + id + '"></div>';
+            let cellhtml = '<div class="circle ' + circleClass + '" id="' + id + '"></div>';
             well_plate_html +=  cellhtml;
         }
         // Finish row tag
@@ -37,10 +53,29 @@ function createWellPlate(rows, cols) {
     
     // Circle Grid 
     $('.circle').height($('.circle').width()); 
+
+    // Scale image down if there are too many well plates
+    //cellGrid.style.transform = "scale = .8";
 }
 
 // Creates the customizable (clickable) grid of well plate cells based on selection given
 function createCustomizableWellPlate(rows, cols) {
+     // Change Size of wells and margins depending on number of wells by adding appropriate classes
+     var circleClass;
+     if (rows == 2) {
+         // 6 Wells
+        circleClass = "circle-six-well";
+        $('#custom-cell-grid').addClass('customizable-six-well');
+    } else if (rows == 3) {
+        // 12 Wells
+        circleClass = "circle-twelve-well";
+        $('#custom-cell-grid').addClass('customizable-twelve-well');
+    } else {
+        // 24 Wells and Above
+        circleClass = "circle-twentyfour-well";
+        $('#custom-cell-grid').addClass('customizable-twentyfour-well');
+    }
+
     // Clear previous grid
     var cellGrid = document.getElementById('custom-cell-grid');
     cellGrid.innerHTML = "";
@@ -52,7 +87,7 @@ function createCustomizableWellPlate(rows, cols) {
         for (let j = 0; j < cols; j++) {
             // Create unique Id consisting of row and column number
             let id = "R" + i + "C" + j;
-            let cellhtml = '<div class="circle" onClick="selectCell(this.id)" id="' + id + '"></div>';
+            let cellhtml = '<div class="circle ' + circleClass + '" onClick="selectCell(this.id)" id="' + id + '"></div>';
             well_plate_html +=  cellhtml;
         }
         // Finish row tag
@@ -65,6 +100,7 @@ function createCustomizableWellPlate(rows, cols) {
     // Insert html into cell grid element
     cellGrid.innerHTML = well_plate_html;
     
+    // Style Grid
     // Circle Grid 
     $('.circle').height($('.circle').width()); 
     
@@ -113,13 +149,13 @@ sizeSelection.addEventListener('change', (event) => {
 
     // Change Image to match selection and draw well plate of correct size to allow for specific cells to be choosen
     if (size == "6") {
-        plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/6-well-Front.png')";
+        //plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/6-well-Front.png')";
         createCustomizableWellPlate(2, 3);
     } else if (size == "12") {
-        plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/12-well-Front.png')";
+        //plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/12-well-Front.png')";
         createCustomizableWellPlate(3, 4);
     } else if (size == "24") {
-        plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/24-well-Front.png')"; 
+       //plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/24-well-Front.png')"; 
         createCustomizableWellPlate(4, 6); 
     } else {
         plateImg.style.backgroundImage = "";
@@ -143,13 +179,14 @@ exchangeButton.addEventListener('click', function(e) {
 
     // Generate Well Plate Image based on input
     if (size == "6") {
-        createWellPlate(3, 2);
+        createWellPlate(2, 3);
     }
     else if (size == "12") {
         createWellPlate(3, 4);
     }
     else if (size == "24") {
         createWellPlate(4, 6);
+
     }
 
 
@@ -204,7 +241,6 @@ function killChildProcess() {
     });
 }
 
-
 // When Clicked Each Cell in the Well Plate should change color and signal that they are filled
 function selectCell(culture_id) {
     var culture  = document.getElementById(culture_id);
@@ -226,12 +262,6 @@ function selectCell(culture_id) {
 
 }
 
-
-
-
-
-
-
  // Helper Function that toggles the visibility of all elements within the column
 function toggleElements() {
 
@@ -251,29 +281,27 @@ function toggleElements() {
     }
 }
 
-  // Testing Calling Python scripts through get request to Node.js server
-    // Media Exhange Button
-    // When Pressed will clear page of all elements 
-    const pythonButton = document.querySelector("#python-button");
+    // Testing Calling Python scripts through get request to Node.js server
+    // const pythonButton = document.querySelector("#python-button");
     
-    pythonButton.addEventListener('click', function(e) {
-        // Using fetch to get data
-        //https://cors-anywhere.herokuapp.com/
-        pythonurl = 'http://10.144.13.13:3000/pythonhello'
+    // pythonButton.addEventListener('click', function(e) {
+    //     // Using fetch to get data
+    //     //https://cors-anywhere.herokuapp.com/
+    //     pythonurl = 'http://10.144.13.13:3000/pythonhello'
         
-        fetch(pythonurl)
-            .then((response) => {
-            return response.text();
-        })
-        .then((data) => {
-            console.log(data);
-        })
-        .catch (err => {
-        // Display Error message if no data is returned from search
-            console.log("Error Running python script");
-        });
+    //     fetch(pythonurl)
+    //         .then((response) => {
+    //         return response.text();
+    //     })
+    //     .then((data) => {
+    //         console.log(data);
+    //     })
+    //     .catch (err => {
+    //     // Display Error message if no data is returned from search
+    //         console.log("Error Running python script");
+    //     });
 
-    });
+    // });
 
     const dispenseButton = document.querySelector("#dispense-button");
     
