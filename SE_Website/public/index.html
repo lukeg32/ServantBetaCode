@@ -24,20 +24,8 @@
 
         
         <div class="row" id="well-plate-selection">
-            <!--Left Column Containing Header and Image of current well plate-->
+            <!--Left Column Containing Drop Downs for media exchange customization-->
             <div class="column">
-                <h2 id="curr-plate-header">Your Well Plate</h2>
-
-                <div id="current-well-plate"></div>
-
-                <div id="custom-cell-grid" class="cell=grid">
-                </div>
-                
-            </div>
-    
-            <!--Right Column Containing Drop Downs for media exchange customization-->
-            <div class="column">
-
                 <h3>Well Plate Size</h3>
 
                 <select class="form-select" aria-label="Default select example" id="size-selection" required>
@@ -62,15 +50,25 @@
                 <p id="error-text"><em>Please Make a Selection within all fields</em></p>
                 
                 <div class="navbar">
-                    <button class="navbutton" id="python-button">Call hello.py</button>
                     <button class="navbutton" id="dispense-button">Dispense Media</button>
                 </div>
+                
+            </div>
+    
+            <!--Right Column Containing Header and Image of current well plate-->
+            <div class="column">
+                <h2 id="curr-plate-header">Your Well Plate</h2>
 
+                <div id="custom-cell-grid" class="cell-grid"></div>
+
+                <div id="current-well-plate"></div>
+
+                
             </div>
         </div>
 
         <div id="exchange-info">
-            <div id="cell-grid" class="cell-grid">
+            <div id="static-cell-grid" class="cell-grid">
 
             </div>
 
