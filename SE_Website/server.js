@@ -7,20 +7,11 @@ const app = express();
 const port = 80;
 const controller = new AbortController();
 const {signal} = controller;
+app.use(express.json());
 app.use(cors());
 
 // Serve public folder as homepage
 app.use(express.static("/home/pi/ServantBetaCode/SE_Website/public"));
-
-// app.get('/', (req, res) => {
- 
-//       var options = {
-//             root: path.join(__dirname)
-//       };
-//       res.sendFile('index.html', options);
-//       res.sendFile('HomeStylesheet.css', options);
- 
-// })
 
 app.get('/pythonhello', (req, res) => {
 
@@ -66,5 +57,24 @@ app.get('/abort', (req, res) => {
       res.send("Child Process Terminated");
 });
 
-app.listen(port, () => console.log(`Example app listening on port 
-${port}!`))
+// Handle Post requests used to call media exhange scripts
+app.post('/exchange', (req, res) => {
+      // Print argument for testing
+      console.log(req.body.size);
+      var dataToSend;
+      // spawn new child process to call the python script with argument of well plate size (in this case 6 or 12)
+      const python = spawn('python3', ['exchange.py', req.body.size]);
+      // collect data from script
+      python.stdout.on('data', function (data) {
+      console.log('Pipe data from python script ...');
+      dataToSend = data.toString();
+      });
+      // in close event we are sure that stream from child process is closed
+      python.on('close', (code) => {
+      console.log(`child process close all stdio with code ${code}`);
+      // send data to browser
+      res.send(dataToSend);
+      });
+});
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
