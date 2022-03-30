@@ -175,7 +175,37 @@ exchangeButton.addEventListener('click', function(e) {
   var angle = angleSelection.options[angleSelection.selectedIndex].text;
 
   if (size != "Select Well Plate Size" && angle != "Select Well Plate Angle") {
-    // TODO MAKE GET REQUEST TO NODEJS SERVER TO CALL MATCHING PYTHON SCRIPT TO WELL PLATE SELECTION FOR MEDIA EXHANGE
+    // MAKE POST REQUEST TO NODEJS SERVER TO CALL MATCHING PYTHON SCRIPT TO WELL PLATE SELECTION FOR MEDIA EXHANGE
+    url = 'http://10.144.13.13:80/exchange'
+            
+    fetch(url, {
+     
+    // Adding method type
+    method: "POST",
+     
+    // Adding body or contents to send
+    body: JSON.stringify({
+        size: size,
+        angle: angle
+    }),
+     
+    // Adding headers to the request
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+    })
+    .then((response) => {
+    return response.text();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    .catch (err => {
+        // Display Error message
+        console.log("Failure to run script");
+        console.log(err);
+    });
+
 
     // Generate Well Plate Image based on input
     if (size == "6") {
@@ -226,7 +256,7 @@ stopButton.addEventListener('click', function(e) {
 function killChildProcess() {
     // STOP PYTHON SCRIPT FROM RUNNING
     // Using fetch to make get request
-    pythonurl = 'http://10.144.13.13:3000/abort'
+    pythonurl = 'http://10.144.13.13:80/abort'
             
     fetch(pythonurl)
         .then((response) => {
@@ -307,7 +337,7 @@ function toggleElements() {
     
     dispenseButton.addEventListener('click', function(e) {
         // Using fetch to get data
-        pythonurl = 'http://10.144.13.13:3000/pythondispense'
+        pythonurl = 'http://10.144.13.13:80/pythondispense'
         
         fetch(pythonurl)
             .then((response) => {
