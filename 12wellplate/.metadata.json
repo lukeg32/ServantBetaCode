@@ -1,0 +1,450 @@
+{
+  "startwell1.gcode": {
+    "hash": "4fc06db3cab4eb8270f9b7d1350d206dcf4e5d7f",
+    "history": [
+      {
+        "timestamp": 1639258878.8922708,
+        "printTime": 16.311654252000153,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639264863.7967374,
+        "printTime": 40.53279190699959,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639264920.16883,
+        "success": false,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639265797.425326,
+        "printTime": 42.03894022900022,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639265892.679684,
+        "printTime": 48.68295997899986,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266211.3983757,
+        "printTime": 50.34051256800012,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266459.5052965,
+        "printTime": 51.3520832639997,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266577.5579193,
+        "printTime": 48.68883331100005,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266675.1741242,
+        "printTime": 47.62604965300034,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267460.0599136,
+        "printTime": 50.32818056199994,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267574.401063,
+        "printTime": 48.64324817099987,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1641856059.3960254,
+        "printTime": 64.11167051500001,
+        "success": true,
+        "printerProfile": "_default"
+      }
+    ],
+    "statistics": {
+      "averagePrintTime": {
+        "_default": 46.24153858281817
+      },
+      "lastPrintTime": {
+        "_default": 64.11167051500001
+      }
+    },
+    "analysis": {
+      "_empty": true,
+      "printingArea": {
+        "minX": 0,
+        "maxX": 0,
+        "minY": 0,
+        "maxY": 0,
+        "minZ": 0,
+        "maxZ": 0
+      },
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "filament": {}
+    }
+  },
+  "end.gcode": {
+    "hash": "f04a729d1cfab56057987400f4a6cc9dcd6bfb7d",
+    "history": [
+      {
+        "timestamp": 1639259892.5540142,
+        "printTime": 17.98124458700022,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266987.0009851,
+        "success": false,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267858.6730397,
+        "printTime": 78.69112958099959,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1641856202.5394464,
+        "printTime": 36.6427636410001,
+        "success": true,
+        "printerProfile": "_default"
+      }
+    ],
+    "statistics": {
+      "averagePrintTime": {
+        "_default": 44.43837926966663
+      },
+      "lastPrintTime": {
+        "_default": 36.6427636410001
+      }
+    },
+    "analysis": {
+      "_empty": true,
+      "printingArea": {
+        "minX": 0,
+        "maxX": 0,
+        "minY": 0,
+        "maxY": 0,
+        "minZ": 0,
+        "maxZ": 0
+      },
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "filament": {}
+    }
+  },
+  "well2.gcode": {
+    "hash": "ddb9d44cc77878d65cf26e25a29d9cf0100e631c",
+    "history": [
+      {
+        "timestamp": 1639259792.5757904,
+        "printTime": 0.09874412900035168,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639265799.6708887,
+        "printTime": 0.09251728300023387,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266217.7253423,
+        "printTime": 0.11108012499971665,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266465.9346657,
+        "printTime": 0.09552792300019064,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266682.161957,
+        "printTime": 0.12457240500043554,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267466.3757727,
+        "printTime": 0.12251421200016921,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267581.36293,
+        "printTime": 0.1148883490004664,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1641856066.063374,
+        "printTime": 0.16968195399999786,
+        "success": true,
+        "printerProfile": "_default"
+      }
+    ],
+    "statistics": {
+      "averagePrintTime": {
+        "_default": 0.11619079750019523
+      },
+      "lastPrintTime": {
+        "_default": 0.16968195399999786
+      }
+    },
+    "analysis": {
+      "_empty": true,
+      "printingArea": {
+        "minX": 0,
+        "maxX": 0,
+        "minY": 0,
+        "maxY": 0,
+        "minZ": 0,
+        "maxZ": 0
+      },
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "filament": {}
+    }
+  },
+  "well5.gcode": {
+    "hash": "b87b737c0bc4a0ec6ea0caa01f73f3e7f00e5ecc",
+    "history": [
+      {
+        "timestamp": 1639259833.6394823,
+        "printTime": 6.295783429000039,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266836.7005134,
+        "printTime": 36.389841860999695,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267735.8768418,
+        "printTime": 36.415378863000115,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1641856139.0567114,
+        "printTime": 13.121363506999842,
+        "success": true,
+        "printerProfile": "_default"
+      }
+    ],
+    "statistics": {
+      "averagePrintTime": {
+        "_default": 23.055591914999923
+      },
+      "lastPrintTime": {
+        "_default": 13.121363506999842
+      }
+    },
+    "analysis": {
+      "_empty": true,
+      "printingArea": {
+        "minX": 0,
+        "maxX": 0,
+        "minY": 0,
+        "maxY": 0,
+        "minZ": 0,
+        "maxZ": 0
+      },
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "filament": {}
+    }
+  },
+  "well3.gcode": {
+    "hash": "b0c95d7d825e9b55e5729be4d19ce5215aa87331",
+    "history": [
+      {
+        "timestamp": 1639259806.7532897,
+        "printTime": 1.1070361590000175,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266719.7948976,
+        "printTime": 1.117753114000152,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267619.0003438,
+        "printTime": 1.102335782999944,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1641856086.0130043,
+        "printTime": 1.1662982430000284,
+        "success": true,
+        "printerProfile": "_default"
+      }
+    ],
+    "statistics": {
+      "averagePrintTime": {
+        "_default": 1.1233558247500355
+      },
+      "lastPrintTime": {
+        "_default": 1.1662982430000284
+      }
+    },
+    "analysis": {
+      "_empty": true,
+      "printingArea": {
+        "minX": 0,
+        "maxX": 0,
+        "minY": 0,
+        "maxY": 0,
+        "minZ": 0,
+        "maxZ": 0
+      },
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "filament": {}
+    }
+  },
+  "well6.gcode": {
+    "hash": "1358a9886772c73cce4c3e30eb9ef2e07aa9a2bb",
+    "history": [
+      {
+        "timestamp": 1639259839.9712489,
+        "printTime": 1.1127210719996583,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266844.2839468,
+        "printTime": 1.1117008640003405,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267743.4543839,
+        "printTime": 1.116942638999717,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1641856147.0818133,
+        "printTime": 1.1523122339999645,
+        "success": true,
+        "printerProfile": "_default"
+      }
+    ],
+    "statistics": {
+      "averagePrintTime": {
+        "_default": 1.12341920224992
+      },
+      "lastPrintTime": {
+        "_default": 1.1523122339999645
+      }
+    },
+    "analysis": {
+      "_empty": true,
+      "printingArea": {
+        "minX": 0,
+        "maxX": 0,
+        "minY": 0,
+        "maxY": 0,
+        "minZ": 0,
+        "maxZ": 0
+      },
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "filament": {}
+    }
+  },
+  "well4.gcode": {
+    "hash": "1c1f37f5738e1a38be49390b9e3a6323b4ab0d05",
+    "history": [
+      {
+        "timestamp": 1639259824.200916,
+        "printTime": 7.106634199999917,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639266793.8859217,
+        "printTime": 31.200205399999504,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1639267693.0942323,
+        "printTime": 31.21329015399988,
+        "success": true,
+        "printerProfile": "_default"
+      },
+      {
+        "timestamp": 1641856119.2486875,
+        "printTime": 13.333043642999883,
+        "success": true,
+        "printerProfile": "_default"
+      }
+    ],
+    "statistics": {
+      "averagePrintTime": {
+        "_default": 20.713293349249795
+      },
+      "lastPrintTime": {
+        "_default": 13.333043642999883
+      }
+    },
+    "analysis": {
+      "_empty": true,
+      "printingArea": {
+        "minX": 0,
+        "maxX": 0,
+        "minY": 0,
+        "maxY": 0,
+        "minZ": 0,
+        "maxZ": 0
+      },
+      "dimensions": {
+        "width": 0,
+        "height": 0,
+        "depth": 0
+      },
+      "filament": {}
+    }
+  }
+}
