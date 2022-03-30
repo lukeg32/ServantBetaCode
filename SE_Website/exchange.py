@@ -6,9 +6,50 @@ import datetime
 import time
 import math
 import requests
+import RPi.GPIO as GPIO
 from termcolor import colored
 from octoprint_cli import __version__
 from octoprint_cli.api import api
+
+# Motor
+LEFT_MOTOR = 16
+RIGHT_MOTOR = 18
+
+def initPWM():
+    global pwmDispense
+    global pwmRemoval
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(LEFT_MOTOR, GPIO.OUT)
+    GPIO.output(LEFT_MOTOR, GPIO.HIGH)
+    pwmRemoval = GPIO.PWM(LEFT_MOTOR, 1000) # Set Frequency to 1 KHz
+    pwmRemoval.start(0) # Set the starting Duty Cycle
+
+    GPIO.setup(RIGHT_MOTOR, GPIO.OUT)
+    GPIO.output(RIGHT_MOTOR, GPIO.HIGH)
+    pwmDispense = GPIO.PWM(RIGHT_MOTOR, 1000) # Set Frequency to 1 KHz
+    pwmDispense.start(0) # Set the starting Duty Cycle
+
+def remove(speed, delay):
+    pwmRemoval.ChangeDutyCycle(speed)
+    time.sleep(delay)
+    pwmRemoval.ChangeDutyCycle(100)
+
+def dispense(speed, delay):
+    pwmDispense.ChangeDutyCycle(speed)
+    time.sleep(delay)
+    pwmDispense.ChangeDutyCycle(100)
+
+def destroy():
+    pwmRemoval.stop()
+    GPIO.output(LEFT_MOTOR, GPIO.HIGH)
+    GPIO.cleanup()
+
+    pwmDispense.stop()
+    GPIO.output(RIGHT_MOTOR, GPIO.HIGH)
+    GPIO.cleanup()
+
+
+
 
 # Initialize the gcode directory
 if sys.argv[1] == "6":
@@ -42,6 +83,7 @@ else:
 time.sleep(1)
 
 # Operate printer
+initPWM()
 print("Going to the first well")
 count = 1
 for file in gcodeFiles:
@@ -67,12 +109,12 @@ for file in gcodeFiles:
 
     # Remove media
     print("Make media removal pump go brrrrr")
-    time.sleep(3)
+    remove(80, 1)
     print("Media removed!")
 
     # Dispense media
     print("Make media dispensing pump go brrrrr")
-    time.sleep(3)
+    dispense(80, 1)
     print("New media dispensed")
 
     if (count != 7):
@@ -82,3 +124,5 @@ for file in gcodeFiles:
 code = caller.post("/api/connection", {"command": "disconnect"})
 if (code != 204):
     print("disconnect")
+
+destroy()
