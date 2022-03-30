@@ -22,12 +22,12 @@ def initPWM():
     GPIO.setup(LEFT_MOTOR, GPIO.OUT)
     GPIO.output(LEFT_MOTOR, GPIO.HIGH)
     pwmRemoval = GPIO.PWM(LEFT_MOTOR, 1000) # Set Frequency to 1 KHz
-    pwmRemoval.start(0) # Set the starting Duty Cycle
+    pwmRemoval.start(100) # Set the starting Duty Cycle
 
     GPIO.setup(RIGHT_MOTOR, GPIO.OUT)
     GPIO.output(RIGHT_MOTOR, GPIO.HIGH)
     pwmDispense = GPIO.PWM(RIGHT_MOTOR, 1000) # Set Frequency to 1 KHz
-    pwmDispense.start(0) # Set the starting Duty Cycle
+    pwmDispense.start(100) # Set the starting Duty Cycle
 
 def remove(speed, delay):
     pwmRemoval.ChangeDutyCycle(speed)
@@ -39,13 +39,14 @@ def dispense(speed, delay):
     time.sleep(delay)
     pwmDispense.ChangeDutyCycle(100)
 
+# might have a major bug
 def destroy():
     pwmRemoval.stop()
-    GPIO.output(LEFT_MOTOR, GPIO.HIGH)
+    GPIO.output(LEFT_MOTOR, GPIO.LOW)
     GPIO.cleanup()
 
     pwmDispense.stop()
-    GPIO.output(RIGHT_MOTOR, GPIO.HIGH)
+    GPIO.output(RIGHT_MOTOR, GPIO.LOW)
     GPIO.cleanup()
 
 
@@ -53,10 +54,10 @@ def destroy():
 
 # Initialize the gcode directory
 if sys.argv[1] == "6":
-    pathToFiles = "/home/pi/ServantBetaCode/6wellplate/"
+    pathToFiles = "6wellplate/"
     gcodeFiles = ["startwell1.gcode", "well2.gcode", "well3.gcode", "well4.gcode", "well5.gcode", "well6.gcode", "end.gcode"]
 elif sys.argv[1] == "12":
-    pathToFiles = "/home/pi/ServantBetaCode/12wellplate/"
+    pathToFiles = "12wellplate/"
     gcodeFiles = ["startwell1.gcode", "well2.gcode", "well3.gcode", "well4.gcode", "well5.gcode", "well6.gcode", "end.gcode"]
 else:
     print("Invalid plate size")
@@ -74,6 +75,7 @@ if not caller.authTest():
 time.sleep(1)
 data = {'command': 'connect', 'Content-Type': 'application/json'}
 code = caller.post("/api/connection", data)
+print("asdf")
 
 if (code == 204):
     print("Connected")
@@ -91,31 +93,35 @@ for file in gcodeFiles:
     code = caller.selectFile(pathToFiles + file)
     print(pathToFiles + file)
     if code != 204:
-        print("Failed to load file" + str(code))
+        print("Failed to load file " + str(code))
+        break
 
     code = caller.printRequests('start')
     if code != 204:
         print("Failed to start")
+        break
 
     # Wait for motion to finish
-#    waitingForPrint = True
-#    while (waitingForPrint):
-#        state = caller.getState()
-#        if (state == 'Operational'):
-#            waitingForPrint = False
-#        else:
-#            time.sleep(1)
+    waitingForPrint = True
+    while (waitingForPrint):
+        state = caller.getState()
+        if (state == 'Operational'):
+            waitingForPrint = False
+        else:
+            time.sleep(1)
     count += 1
 
     # Remove media
     print("Make media removal pump go brrrrr")
-    remove(80, 1)
+    remove(20, 1)
     print("Media removed!")
 
     # Dispense media
     print("Make media dispensing pump go brrrrr")
-    dispense(80, 1)
+    dispense(20, 1)
     print("New media dispensed")
+
+
 
     if (count != 7):
         print("Going to well", count)
