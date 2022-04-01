@@ -62,12 +62,14 @@ app.post('/exchange', (req, res) => {
       // Print argument for testing
       console.log(req.body.size);
       var dataToSend;
+      const args = ['exchange.py', req.body.size.toString()]
       // spawn new child process to call the python script with argument of well plate size (in this case 6 or 12)
-      const python = spawn('python3', ['exchange.py', req.body.size]);
+      const python = spawn('python3', args);
       // collect data from script
       python.stdout.on('data', function (data) {
       console.log('Pipe data from python script ...');
       dataToSend = data.toString();
+      console.log(dataToSend);
       });
       // in close event we are sure that stream from child process is closed
       python.on('close', (code) => {
