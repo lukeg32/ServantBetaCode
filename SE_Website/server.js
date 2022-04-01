@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 var pid;
+var sigkill;
 
 // Serve public folder as homepage
 app.use(express.static("/home/pi/ServantBetaCode/SE_Website/public"));
@@ -54,7 +55,7 @@ app.get('/pythondispense', (req, res) => {
 
 // Get Request to *hopefully* abort the currently running child process
 app.get('/abort', (req, res) => {
-      signal   = signal || 'SIGKILL';
+      sigkill   = signal || 'SIGKILL';
       // Try to stop python script
       try { 
             process.kill(pid, signal);
