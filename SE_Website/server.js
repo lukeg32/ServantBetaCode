@@ -56,10 +56,11 @@ app.get('/pythondispense', (req, res) => {
 
 // Get Request to *hopefully* abort the currently running child process
 app.get('/abort', (req, res) => {
-      sigkill   = signal || 'SIGKILL';
+      //sigkill   = signal || 'SIGKILL';
       // Try to stop python script
       try { 
-            process.kill(python.pid, sigkill);
+            // kill the process with pid and signal = 'SIGINT'     
+            process.kill(python.pid, 'SIGINT');
             console.log("Child Process Terminated");
        }
         catch (ex) { 
