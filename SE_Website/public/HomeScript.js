@@ -1,8 +1,9 @@
 // Grab References to Drop down menues
 var sizeSelection = document.getElementById('size-selection');
-var angleSelection = document.getElementById('angle-selection');
+//var angleSelection = document.getElementById('angle-selection');
+var angle = document.getElementById('angle');
+var exchangeSelection = document.getElementById('exchange-selection');
 var plateImg = document.getElementById('current-well-plate');
-
 
 // Circle Grid
 $('.circle').height($('.circle').width());
@@ -151,9 +152,15 @@ sizeSelection.addEventListener('change', (event) => {
     if (size == "6") {
         //plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/6-well-Front.png')";
         createCustomizableWellPlate(2, 3);
+        // Change Angle to place well plate at
+        angle.innerText = "Place Well Plate at 15° Angle";
+
     } else if (size == "12") {
         //plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/12-well-Front.png')";
         createCustomizableWellPlate(3, 4);
+        // Change angle to place well plate at
+        angle.innerText = "Place Well Plate at 30° Angle";
+
     } else if (size == "24") {
        //plateImg.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url('https://www.mattek.com/wp-content/uploads/24-well-Front.png')"; 
         createCustomizableWellPlate(4, 6); 
@@ -171,10 +178,12 @@ sizeSelection.addEventListener('change', (event) => {
 const exchangeButton = document.querySelector("#exchange-button");
 exchangeButton.addEventListener('click', function(e) {
   // Save Data From Selectors
-  var size = sizeSelection.options[sizeSelection.selectedIndex].text;
-  var angle = angleSelection.options[angleSelection.selectedIndex].text;
+  var size = sizeSelection.options[sizeSelection.selectedIndex].value;
+  //var angle = angleSelection.options[angleSelection.selectedIndex].text;
+  // Options are full, remove, and dispense
+  var exchangeoption = exchangeSelection.options[exchangeSelection.selectedIndex].value;
 
-  if (size != "Select Well Plate Size" && angle != "Select Well Plate Angle") {
+  if (size != "default" && exchangeoption != "default") {
     // MAKE POST REQUEST TO NODEJS SERVER TO CALL MATCHING PYTHON SCRIPT TO WELL PLATE SELECTION FOR MEDIA EXHANGE
     url = 'http://10.144.13.13:80/exchange'
             
@@ -186,7 +195,7 @@ exchangeButton.addEventListener('click', function(e) {
     // Adding body or contents to send
     body: JSON.stringify({
         size: size,
-        angle: angle
+        exchange: exchangeoption
     }),
      
     // Adding headers to the request
@@ -333,25 +342,23 @@ function toggleElements() {
 
     // });
 
-    const dispenseButton = document.querySelector("#dispense-button");
+    // const dispenseButton = document.querySelector("#dispense-button");
     
-    dispenseButton.addEventListener('click', function(e) {
-        // Using fetch to get data
-        pythonurl = 'http://10.144.13.13:80/pythondispense'
+    // dispenseButton.addEventListener('click', function(e) {
+    //     // Using fetch to get data
+    //     pythonurl = 'http://10.144.13.13:80/pythondispense'
         
-        fetch(pythonurl)
-            .then((response) => {
-            return response.text();
-        })
-        .then((data) => {
-            console.log(data);
-        })
-        .catch (err => {
-        // Display Error message if no data is returned from search
-            console.log("Error running python script");
-        });
+    //     fetch(pythonurl)
+    //         .then((response) => {
+    //         return response.text();
+    //     })
+    //     .then((data) => {
+    //         console.log(data);
+    //     })
+    //     .catch (err => {
+    //     // Display Error message if no data is returned from search
+    //         console.log("Error running python script");
+    //     });
 
 
-    });
-
-
+    // });
