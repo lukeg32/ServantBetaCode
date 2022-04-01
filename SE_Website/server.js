@@ -59,7 +59,7 @@ app.get('/abort', (req, res) => {
       sigkill   = signal || 'SIGKILL';
       // Try to stop python script
       try { 
-            process.kill(python.pid, signal);
+            process.kill(python.pid, signalkill);
             console.log("Child Process Terminated");
        }
         catch (ex) { 
