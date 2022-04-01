@@ -10,6 +10,7 @@ const {signal} = controller;
 app.use(express.json());
 app.use(cors());
 
+var python;
 var pid;
 var sigkill;
 
@@ -58,7 +59,7 @@ app.get('/abort', (req, res) => {
       sigkill   = signal || 'SIGKILL';
       // Try to stop python script
       try { 
-            process.kill(pid, signal);
+            process.kill(python.pid, signal);
             console.log("Child Process Terminated");
        }
         catch (ex) { 
@@ -75,9 +76,9 @@ app.post('/exchange', (req, res) => {
       var dataToSend;
       const args = ['exchange.py', req.body.size.toString()]
       // spawn new child process to call the python script with argument of well plate size (in this case 6 or 12)
-      const python = spawn('python3', args);
+      python = spawn('python3', args);
       // Save pid so it can be stopped if needed
-      //pid = python.pid;
+      // pid = python.pid;
       // collect data from script
       python.stdout.on('data', function (data) {
       console.log('Pipe data from python script ...');
