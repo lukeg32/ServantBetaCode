@@ -23,3 +23,139 @@ Example app listening on port 80!
 child process close all stdio with code 2
 6
 child process close all stdio with code 2
+Example app listening on port 80!
+Example app listening on port 80!
+Example app listening on port 80!
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_INVALID_ARG_TYPE]: The "pid" argument must be of type number. Received type undefined
+    at process.kill (internal/process/per_thread.js:182:13)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+1
+child process close all stdio with code 2
+1
+child process close all stdio with code 2
+6
+child process close all stdio with code 2
+6
+child process close all stdio with code 2
+6
+child process close all stdio with code 2
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_UNKNOWN_SIGNAL]: Unknown signal: [object AbortSignal]
+    at process.kill (internal/process/per_thread.js:193:15)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+12
+child process close all stdio with code 2
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_UNKNOWN_SIGNAL]: Unknown signal: [object AbortSignal]
+    at process.kill (internal/process/per_thread.js:193:15)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_UNKNOWN_SIGNAL]: Unknown signal: [object AbortSignal]
+    at process.kill (internal/process/per_thread.js:193:15)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+12
+child process close all stdio with code 2
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_UNKNOWN_SIGNAL]: Unknown signal: [object AbortSignal]
+    at process.kill (internal/process/per_thread.js:193:15)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+6
+child process close all stdio with code 2
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_UNKNOWN_SIGNAL]: Unknown signal: [object AbortSignal]
+    at process.kill (internal/process/per_thread.js:193:15)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+6
+child process close all stdio with code 2
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_UNKNOWN_SIGNAL]: Unknown signal: [object AbortSignal]
+    at process.kill (internal/process/per_thread.js:193:15)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+Child Process cannot be stopped... We are Doomed
+TypeError [ERR_UNKNOWN_SIGNAL]: Unknown signal: [object AbortSignal]
+    at process.kill (internal/process/per_thread.js:193:15)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:61:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7)
+12
+child process close all stdio with code 2
+6
+child process close all stdio with code 2
+Example app listening on port 80!
+6
+child process close all stdio with code 2
+Child Process cannot be stopped... We are Doomed
+{ Error: kill ESRCH
+    at process.kill (internal/process/per_thread.js:198:13)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:63:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7) errno: 'ESRCH', code: 'ESRCH', syscall: 'kill' }

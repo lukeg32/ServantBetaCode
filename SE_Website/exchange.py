@@ -59,9 +59,20 @@ def run_program():
         gcodeFiles = ["startwell1.gcode", "well2.gcode", "well3.gcode", "well4.gcode", "well5.gcode", "well6.gcode", "end.gcode"]
     elif sys.argv[1] == "12":
         pathToFiles = "12wellplate/"
-        gcodeFiles = ["startwell1.gcode", "well2.gcode", "well3.gcode", "well4.gcode", "well5.gcode", "well6.gcode", "end.gcode"]
+        gcodeFiles = ["startwell1.gcode", "well2.gcode", "well3.gcode", "well4.gcode", "well5.gcode", "well6.gcode", "well7.gcode", 'well8.gcode', 'well9.gcode', 'well10.gcode', 'well11.gcode', 'well12.gcode', "end.gcode"]
     else:
         print("Invalid plate size")
+
+    # Initialize mode flags
+    if sys.argv[2] == "full":
+        dispense_flag = 1
+        remove_flag = 1
+    elif sys.argv[2] == "dispense":
+        dispense_flag = 1
+        remove_flag = 0
+    elif sys.argv[2] == "remove":
+        dispense_flag = 0
+        remove_flag = 1
 
     # Intialize the OctoPrint caller
     caller = api("http://10.144.13.13:88", "4AA2ACB8B0DF46479FCB03F9FDC17A60", verbose=False)
@@ -76,7 +87,7 @@ def run_program():
     time.sleep(1)
     data = {'command': 'connect', 'Content-Type': 'application/json'}
     code = caller.post("/api/connection", data)
-    print("asdf")
+    print("Running in " + sys.argv[2] + "mode on a " + sys.argv[1] + "-well plate")
 
     if (code == 204):
         print("Connected")
@@ -109,28 +120,33 @@ def run_program():
             if (state == 'Operational'):
                 waitingForPrint = False
             else:
-                time.sleep(10)
+                time.sleep(1)
         count += 1
 
-        # Remove media
-        print("Make media removal pump go brrrrr")
-        remove(20, 1)
-        print("Media removed!")
-
-        # Dispense media
-        print("Make media dispensing pump go brrrrr")
-        dispense(20, 1)
-        print("New media dispensed")
-
-
-
-        if (count != 7):
+        if (pathToFiles != "end.gcode"):
             print("Going to well", count)
+
+            # Remove media
+            if remove_flag:
+                print("Make media removal pump go brrrrr")
+                remove(20, 1)
+                print("Media removed!")
+
+            # Dispense media
+            if dispense_flag:
+                print("Make media dispensing pump go brrrrr")
+                dispense(20, 1)
+                print("New media dispensed")
+
+
 
     # Disconnect from the printer
     code = caller.post("/api/connection", {"command": "disconnect"})
     if (code != 204):
         print("disconnect")
+
+    destroy()
+    subprocess.run(["./bashGPIO.sh"])
 
 #destroy()
 if __name__ == '__main__':

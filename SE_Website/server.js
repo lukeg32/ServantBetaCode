@@ -73,9 +73,9 @@ app.get('/abort', (req, res) => {
 // Handle Post requests used to call media exhange scripts
 app.post('/exchange', (req, res) => {
       // Print argument for testing
-      console.log(req.body.size);
+      console.log(req.body.size + ", " + req.body.exchange);
       var dataToSend;
-      const args = ['exchange.py', req.body.size.toString()]
+      const args = ['exchange.py', req.body.size.toString(), req.body.exchange];
       // spawn new child process to call the python script with argument of well plate size (in this case 6 or 12)
       python = spawn('python3', args);
       // Save pid so it can be stopped if needed
