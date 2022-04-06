@@ -53,7 +53,11 @@ def destroy():
 if __name__ == '__main__':
     initPWM()
     try:
-        dispense(20, 5)
+        remove(20, 5)
+        time.sleep(1)
+        dispense(55, 4.5)
     except:
         destroy()
         subprocess.run(["./bashGPIO.sh"])
+    destroy()
+    subprocess.run(["./bashGPIO.sh"])

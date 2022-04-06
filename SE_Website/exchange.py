@@ -123,19 +123,19 @@ def run_program():
                 time.sleep(1)
         count += 1
 
-        if (pathToFiles != "end.gcode"):
+        if (file != "end.gcode"):
             print("Going to well", count)
 
             # Remove media
             if remove_flag:
                 print("Make media removal pump go brrrrr")
-                remove(20, 1)
+                remove(20, 5)
                 print("Media removed!")
 
             # Dispense media
             if dispense_flag:
                 print("Make media dispensing pump go brrrrr")
-                dispense(20, 1)
+                dispense(55, 4.5)
                 print("New media dispensed")
 
 
