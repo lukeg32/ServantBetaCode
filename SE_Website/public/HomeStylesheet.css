@@ -20,7 +20,7 @@ html {
 }
 body {
     font-family: stem, sans-serif;
-	color: #F45B69; 
+	color: #114B5F; 
     background-color: #BFD7EA;
 }
 .page-wrapper {
@@ -35,12 +35,16 @@ body {
 h1 {
     font-family: stem-bold;
     size: 60pt; 
+    color: #F45B69;
 }
 
 h2 {
     font-family: stem-bold;
     size: 45pt; 
-    color: #114B5F;
+    color: #2187a9;
+}
+h3 {
+    color: #2187a9;
 }
 #curr-plate-header {
     text-align: center;
