@@ -21,7 +21,7 @@ app.get('/pythonhello', (req, res) => {
 
       var dataToSend;
       // spawn new child process to call the python script
-      const python = spawn('python3', ['script1.py']);
+      python = spawn('python3', ['script1.py']);
       // collect data from script
       python.stdout.on('data', function (data) {
       console.log('Pipe data from python script ...');
@@ -40,7 +40,7 @@ app.get('/pythondispense', (req, res) => {
 
       var dataToSend;
       // spawn new child process to call the python script
-      const python = spawn('python3', ['script2.py']);
+      python = spawn('python3', ['script2.py']);
       // collect data from script
       python.stdout.on('data', function (data) {
       console.log('Pipe data from python script ...');
@@ -73,9 +73,9 @@ app.get('/abort', (req, res) => {
 // Handle Post requests used to call media exhange scripts
 app.post('/exchange', (req, res) => {
       // Print argument for testing
-      console.log(req.body.size + ", " + req.body.exchange);
+      console.log(req.body.size);
       var dataToSend;
-      const args = ['exchange.py', req.body.size.toString(), req.body.exchange];
+      const args = ['exchange.py', req.body.size.toString()]
       // spawn new child process to call the python script with argument of well plate size (in this case 6 or 12)
       python = spawn('python3', args);
       // Save pid so it can be stopped if needed
@@ -85,6 +85,23 @@ app.post('/exchange', (req, res) => {
       console.log('Pipe data from python script ...');
       dataToSend = data.toString();
       console.log(dataToSend);
+      });
+      // in close event we are sure that stream from child process is closed
+      python.on('close', (code) => {
+      console.log(`child process close all stdio with code ${code}`);
+      // send data to browser
+      res.send(dataToSend);
+      });
+});
+
+app.get('/prime', (req, res) => {
+      var dataToSend;
+      // spawn new child process to call the prime python script
+      python = spawn('python3', ['prime.py']);
+      // collect data from script
+      python.stdout.on('data', function (data) {
+      console.log('Pipe data from python script ...');
+      dataToSend = data.toString();
       });
       // in close event we are sure that stream from child process is closed
       python.on('close', (code) => {
