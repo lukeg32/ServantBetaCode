@@ -242,6 +242,26 @@ exchangeButton.addEventListener('click', function(e) {
 
 });
 
+// Prime Button
+// When pressed will run the pumps for several seconds to clear air bubbles
+const primeButton = document.getElementById("prime-button");
+primeButton.addEventListener('click', function(e) {
+    // Using fetch to make get request
+    url = 'http://10.144.13.13:80/prime'
+            
+    fetch(url)
+        .then((response) => {
+        return response.text();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    .catch (err => {
+        // Display Error message
+        console.log("Failure to prime");
+    });
+});
+
 
 // Cancel Button
 // When Pressed will clear page of all elements related to media exhange and stops script from running
