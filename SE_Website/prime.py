@@ -53,8 +53,8 @@ def destroy():
 if __name__ == '__main__':
     initPWM()
     try:
-        remove(20, 5)
-        time.sleep(1)
+        #remove(20, 5)
+        #time.sleep(1)
         dispense(55, 4.5)
     except:
         destroy()
