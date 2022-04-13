@@ -12,6 +12,7 @@ from octoprint_cli import __version__
 from octoprint_cli.api import api
 import subprocess
 
+path = "/home/pi/ServantBetaCode/scripts/"
 
 
 # Motor
@@ -146,7 +147,7 @@ def run_program():
         print("disconnect")
 
     destroy()
-    subprocess.run(["./bashGPIO.sh"])
+    subprocess.run([path + "bashGPIO.sh"])
 
 #destroy()
 if __name__ == '__main__':
@@ -155,4 +156,4 @@ if __name__ == '__main__':
         run_program()
     except:
         destroy()
-        subprocess.run(["./bashGPIO.sh"])
+        subprocess.run([path + "bashGPIO.sh"])

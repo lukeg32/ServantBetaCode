@@ -7,6 +7,8 @@ const app = express();
 const port = 80;
 const controller = new AbortController();
 const {signal} = controller;
+
+const dir = "/home/pi/ServantBetaCode/SE_Website/";
 app.use(express.json());
 app.use(cors());
 
@@ -75,7 +77,7 @@ app.post('/exchange', (req, res) => {
       // Print argument for testing
       console.log(req.body.size);
       var dataToSend;
-      const args = ['exchange.py', req.body.size.toString()]
+      const args = [dir + 'exchange.py', req.body.size.toString()]
       // spawn new child process to call the python script with argument of well plate size (in this case 6 or 12)
       python = spawn('python3', args);
       // Save pid so it can be stopped if needed
@@ -97,7 +99,7 @@ app.post('/exchange', (req, res) => {
 app.get('/prime', (req, res) => {
       var dataToSend;
       // spawn new child process to call the prime python script
-      python = spawn('python3', ['prime.py']);
+      python = spawn('python3', [dir + 'prime.py']);
       // collect data from script
       python.stdout.on('data', function (data) {
       console.log('Pipe data from python script ...');
