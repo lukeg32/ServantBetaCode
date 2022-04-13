@@ -185,7 +185,7 @@ exchangeButton.addEventListener('click', function(e) {
 
   if (size != "default" && exchangeoption != "default") {
     // MAKE POST REQUEST TO NODEJS SERVER TO CALL MATCHING PYTHON SCRIPT TO WELL PLATE SELECTION FOR MEDIA EXHANGE
-    url = 'http://10.144.13.13:80/exchange'
+    url = 'http://10.55.36.90:80/exchange'
             
     fetch(url, {
      
@@ -238,7 +238,7 @@ exchangeButton.addEventListener('click', function(e) {
   } else {
       // If options were not selected then display error message and don't run scripts
       $("#error-text").show();
-  }
+  } 
 
 });
 
@@ -247,7 +247,7 @@ exchangeButton.addEventListener('click', function(e) {
 const primeButton = document.getElementById("prime-button");
 primeButton.addEventListener('click', function(e) {
     // Using fetch to make get request
-    url = 'http://10.144.13.13:80/prime'
+    url = 'http://10.55.36.90:80/prime'
             
     fetch(url)
         .then((response) => {
@@ -285,7 +285,7 @@ stopButton.addEventListener('click', function(e) {
 function killChildProcess() {
     // STOP PYTHON SCRIPT FROM RUNNING
     // Using fetch to make get request
-    pythonurl = 'http://10.144.13.13:80/abort'
+    pythonurl = 'http://10.55.36.90:80/abort'
             
     fetch(pythonurl)
         .then((response) => {
@@ -346,7 +346,7 @@ function toggleElements() {
     // pythonButton.addEventListener('click', function(e) {
     //     // Using fetch to get data
     //     //https://cors-anywhere.herokuapp.com/
-    //     pythonurl = 'http://10.144.13.13:3000/pythonhello'
+    //     pythonurl = 'http://10.55.36.90:3000/pythonhello'
         
     //     fetch(pythonurl)
     //         .then((response) => {
@@ -366,7 +366,7 @@ function toggleElements() {
     
     // dispenseButton.addEventListener('click', function(e) {
     //     // Using fetch to get data
-    //     pythonurl = 'http://10.144.13.13:80/pythondispense'
+    //     pythonurl = 'http://10.55.36.90:80/pythondispense'
         
     //     fetch(pythonurl)
     //         .then((response) => {
