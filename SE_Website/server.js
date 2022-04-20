@@ -63,6 +63,8 @@ app.get('/abort', (req, res) => {
       try { 
             // kill the process with pid and signal = 'SIGINT'     
             process.kill(python.pid, 'SIGINT');
+
+      	    //python = spawn('kill', python.pid);
             console.log("Child Process Terminated");
        }
         catch (ex) { 
@@ -77,7 +79,7 @@ app.post('/exchange', (req, res) => {
       // Print argument for testing
       console.log(req.body.size);
       var dataToSend;
-      const args = [dir + 'exchange.py', req.body.size.toString()]
+      const args = [dir + 'exchange.py', req.body.size.toString(), req.body.exchange.toString()]
       // spawn new child process to call the python script with argument of well plate size (in this case 6 or 12)
       python = spawn('python3', args);
       // Save pid so it can be stopped if needed

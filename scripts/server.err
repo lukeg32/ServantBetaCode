@@ -159,3 +159,102 @@ Child Process cannot be stopped... We are Doomed
     at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
     at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
     at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7) errno: 'ESRCH', code: 'ESRCH', syscall: 'kill' }
+Example app listening on port 80!
+child process close all stdio with code 0
+6
+child process close all stdio with code 0
+Child Process cannot be stopped... We are Doomed
+{ Error: kill ESRCH
+    at process.kill (internal/process/per_thread.js:198:13)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:65:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7) errno: 'ESRCH', code: 'ESRCH', syscall: 'kill' }
+6
+child process close all stdio with code 0
+Child Process cannot be stopped... We are Doomed
+{ Error: kill ESRCH
+    at process.kill (internal/process/per_thread.js:198:13)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:65:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7) errno: 'ESRCH', code: 'ESRCH', syscall: 'kill' }
+Child Process cannot be stopped... We are Doomed
+{ Error: kill ESRCH
+    at process.kill (internal/process/per_thread.js:198:13)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:65:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7) errno: 'ESRCH', code: 'ESRCH', syscall: 'kill' }
+6
+child process close all stdio with code 0
+Child Process cannot be stopped... We are Doomed
+{ Error: kill ESRCH
+    at process.kill (internal/process/per_thread.js:198:13)
+    at app.get (/home/pi/ServantBetaCode/SE_Website/server.js:65:21)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/layer.js:95:5)
+    at /home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:341:12)
+    at next (/home/pi/ServantBetaCode/SE_Website/node_modules/express/lib/router/index.js:275:10)
+    at SendStream.error (/home/pi/ServantBetaCode/SE_Website/node_modules/serve-static/index.js:121:7) errno: 'ESRCH', code: 'ESRCH', syscall: 'kill' }
+Example app listening on port 80!
+6
+Child Process Terminated
+Pipe data from python script ...
+Running in removemode on a 6-well plate
+Connected
+Going to the first well
+6wellplate/startwell1.gcode
+
+child process close all stdio with code 0
+6
+Pipe data from python script ...
+Running in removemode on a 6-well plate
+Connected
+Going to the first well
+6wellplate/startwell1.gcode
+Going to well 2
+Make media removal pump go brrrrr
+Media removed!
+6wellplate/well2.gcode
+Going to well 3
+Make media removal pump go brrrrr
+Media removed!
+6wellplate/well3.gcode
+Going to well 4
+Make media removal pump go brrrrr
+Media removed!
+6wellplate/well4.gcode
+Going to well 5
+Make media removal pump go brrrrr
+Media removed!
+6wellplate/well5.gcode
+Going to well 6
+Make media removal pump go brrrrr
+Media removed!
+6wellplate/well6.gcode
+Going to well 7
+Make media removal pump go brrrrr
+Media removed!
+6wellplate/end.gcode
+
+child process close all stdio with code 0
+Example app listening on port 80!
